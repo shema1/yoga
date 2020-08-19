@@ -1,0 +1,12 @@
+{
+  "name": "yogability",
+  "displayName": "yogability",
+  "expo": {
+    "name": "yogability",
+    "slug": "yogability",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
