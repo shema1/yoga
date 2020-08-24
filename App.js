@@ -1,15 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { createRef,useEffect} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { WebView, WebViewNavigation  } from 'react-native-webview';
+import { ifIphoneX } from 'react-native-iphone-x-helper';
+import CookieManager from '@react-native-community/cookies';
+const App = () => {
 
-export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <WebView
+      source={{ uri: 'https://yogability.org.au/users/sign_in' }}
+      mixedContentMode="compatibility"
+      startInLoadingState={true}
+      style={styles.iphone}
+
+    />
   );
 }
+
+export default App
 
 const styles = StyleSheet.create({
   container: {
@@ -18,4 +26,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  iphone: {
+    ...ifIphoneX({ marginTop: 35 }),
+  }
 });
